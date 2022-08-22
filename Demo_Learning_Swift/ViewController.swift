@@ -314,6 +314,13 @@ class ViewController: UIViewController {
         var paragraphy: HTMLElement? = HTMLElement(name: "p", text: "hello,world!")
         print(paragraphy!.asHTML())
         paragraphy = nil
+        
+        print("================Visit_Controlled=============")
+        let controlledPerson = ControlledClass(num: 2, name: "John", cellphone: "111-222-333")
+        print(controlledPerson.name) // 由于访问限制，只有 public 级别的属性才能内访问 num 为private级，出了类的作用域就无法被访问，fileprivate 出了自身源文件就无法访问
+
+        ControlledClass_Junior.sayHello()
+        
         while true {}
         
     }
